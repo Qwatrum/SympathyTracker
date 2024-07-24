@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=3 uid="uid://2e5y80wxm50f"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_x80ef"]
+[ext_resource type="FontFile" uid="uid://c3nwxtsii28u3" path="res://fonts/Quicksand-SemiBold.ttf" id="2_8d1ce"]
+[ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="3_tb16o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lup60"]
+bg_color = Color(0.478431, 0.231373, 0.411765, 1)
+border_width_bottom = 5
+border_color = Color(0.67451, 0.364706, 0.592157, 1)
+border_blend = true
+
+[sub_resource type="Theme" id="Theme_sgqmh"]
+Panel/styles/panel = SubResource("StyleBoxFlat_lup60")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yng5c"]
+font = ExtResource("2_8d1ce")
+font_size = 30
+font_color = Color(0.917647, 0.917647, 0.917647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t83qv"]
+bg_color = Color(0.671434, 0.360138, 0.585114, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.478431, 0.231373, 0.411765, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da7ds"]
+bg_color = Color(0.478431, 0.231373, 0.411765, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.671434, 0.360138, 0.585114, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="Theme" id="Theme_t6gsr"]
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("2_8d1ce")
+Button/styles/hover = SubResource("StyleBoxFlat_t83qv")
+Button/styles/normal = SubResource("StyleBoxFlat_da7ds")
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwuse"]
+font = ExtResource("3_tb16o")
+font_size = 10
+font_color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x80ef")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.917647, 0.917647, 0.917647, 1)
+
+[node name="TopBar" type="Panel" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 49.0
+grow_horizontal = 2
+theme = SubResource("Theme_sgqmh")
+
+[node name="Title" type="Label" parent="TopBar"]
+layout_mode = 0
+offset_left = 9.0
+offset_right = 300.0
+offset_bottom = 45.0
+text = "Sympathy Tracker"
+label_settings = SubResource("LabelSettings_yng5c")
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 49.0
+offset_right = 199.0
+offset_bottom = 647.0
+
+[node name="Elements" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = -98.0
+offset_right = -30.0
+offset_bottom = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_t6gsr")
+text = "+"
+
+[node name="SmallCredits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.0
+offset_top = -14.0
+offset_right = 47.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "made  by  Qwatrum"
+label_settings = SubResource("LabelSettings_qwuse")
+
+[connection signal="button_down" from="Add" to="." method="_on_add_button_down"]
