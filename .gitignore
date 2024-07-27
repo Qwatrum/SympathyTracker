@@ -7,50 +7,8 @@ export_presets.cfg
 # Mono-specific ignores
 .mono/
 
-.godot/editor/editor_layout.cfg
-
-.godot/editor/filesystem_cache8
-
-.godot/editor/project_metadata.cfg
-
-.godot/editor/script_editor_cache.cfg
-
-.godot/global_script_class_cache.cfg
-
-.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.md5
-
-.godot/shader_cache/CanvasShaderGLES3/3dcb45256ed815215fd3115afa915419d31aaa2de205c94a682ae402170442aa/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/CopyShaderGLES3/332c26043528add88d03ff3f681b4f5862a6432bf250ccf0f680ee289ba63ec3/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/CubemapFilterShaderGLES3/8af792a18ecd13423a2b035e4856fb43a7fac5dbc42c7dbd51f5e021e314fe48/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/SceneShaderGLES3/d61e39adf5ec80cd86469c3488c82127a3110fad4e7be6105c2cd4189a609048/1d8c2052056880002b21f942081ab902b6599591.cache
-
-.godot/shader_cache/SceneShaderGLES3/d61e39adf5ec80cd86469c3488c82127a3110fad4e7be6105c2cd4189a609048/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/SceneShaderGLES3/d61e39adf5ec80cd86469c3488c82127a3110fad4e7be6105c2cd4189a609048/759922d24d18f6e93947155d0345545f9941ad7c.cache
-
-.godot/shader_cache/SkyShaderGLES3/2fe6fac089654531cde16608b83453a0d64f69d5c28ab83c1902fb055eeb569b/326815bf28d368ee4b1580f2510139a11da0b398.cache
-
-.godot/uid_cache.bin
+.godot/
 
 *.cfg
 
-.godot/editor/recent_dirs
-
-.godot/editor/filesystem_update4
-
-.godot/editor/favorites.Node
-
 *.fontdata
-
-.godot/imported/Quicksand-Regular.ttf-3ed3bd57037f7d257e07bc64cb6127a1.md5
-
-.godot/imported/Quicksand-SemiBold.ttf-2298146e568616c016d8a593ecf03165.md5
-
-.godot/shader_cache/CanvasShaderGLES3/3dcb45256ed815215fd3115afa915419d31aaa2de205c94a682ae402170442aa/0ebc5014c185b7c356aa9520438e656c0b40e68d.cache
-
-.godot/editor/create_recent.Node
-
-.godot/editor/favorites
