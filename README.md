@@ -18,3 +18,8 @@ With a graph and notes you can add to record your sympathy for people, like your
 - See how your sympathy developed over time
 - Edit names etc.
 - Add tags
+
+## Credits:
+- Code: Qwatrum
+- Art: Qwatrum
+- Uicons by [Flaticon](https://www.flaticon.com/uicons)
