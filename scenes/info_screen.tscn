@@ -1,0 +1,205 @@
+[gd_scene load_steps=18 format=3 uid="uid://go2tu0ym8r3c"]
+
+[ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_ii8ir"]
+[ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_4g462"]
+[ext_resource type="FontFile" uid="uid://c3nwxtsii28u3" path="res://fonts/Quicksand-SemiBold.ttf" id="3_u020h"]
+[ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="4_fv44s"]
+[ext_resource type="Script" path="res://scenes/info_screen.gd" id="5_7jb8a"]
+[ext_resource type="Texture2D" uid="uid://bij3urd6lt7l7" path="res://assets/cross.png" id="6_tf3mv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkexl"]
+bg_color = Color(0.388235, 0.180392, 0.333333, 1)
+corner_radius_top_left = 99
+corner_radius_top_right = 99
+corner_radius_bottom_right = 99
+corner_radius_bottom_left = 99
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bg52"]
+bg_color = Color(0.552941, 0.278431, 0.47451, 1)
+corner_radius_top_left = 99
+corner_radius_top_right = 99
+corner_radius_bottom_right = 99
+corner_radius_bottom_left = 99
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4sbw"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnaoi"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ide1i"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j061l"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5k8g"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsysi"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_snosb"]
+HSlider/icons/grabber = ExtResource("1_ii8ir")
+HSlider/icons/grabber_highlight = ExtResource("2_4g462")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vkexl")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2bg52")
+LineEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
+LineEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
+LineEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
+LineEdit/fonts/font = ExtResource("3_u020h")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_h4sbw")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_hnaoi")
+OptionButton/colors/font_color = Color(0.478431, 0.231373, 0.411765, 1)
+OptionButton/colors/font_focus_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_hover_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_pressed_color = Color(0.478431, 0.231373, 0.411765, 1)
+OptionButton/font_sizes/font_size = 20
+OptionButton/fonts/font = ExtResource("4_fv44s")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_ide1i")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_j061l")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_ide1i")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_ide1i")
+Panel/styles/panel = SubResource("StyleBoxFlat_r5k8g")
+TextEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
+TextEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
+TextEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
+TextEdit/fonts/font = ExtResource("3_u020h")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_hsysi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8h67h"]
+font = ExtResource("4_fv44s")
+font_size = 32
+font_color = Color(0.478431, 0.231373, 0.411765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_30tb4"]
+font = ExtResource("4_fv44s")
+font_size = 20
+font_color = Color(0.478431, 0.231373, 0.411765, 1)
+
+[node name="Info_Screen" type="Panel"]
+offset_right = 882.0
+offset_bottom = 567.0
+theme = SubResource("Theme_snosb")
+script = ExtResource("5_7jb8a")
+
+[node name="Cancel" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 16.0
+offset_right = 478.0
+offset_bottom = 528.0
+grow_horizontal = 0
+scale = Vector2(0.035, 0.035)
+texture_normal = ExtResource("6_tf3mv")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 276.0
+offset_bottom = 46.0
+text = "Information about Sympathy Tracker:"
+label_settings = SubResource("LabelSettings_8h67h")
+
+[node name="use" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 54.0
+offset_right = 119.0
+offset_bottom = 79.0
+text = "How to use:
+1) Create a new element with the + button
+
+2) Give it a name and set the type and value.
+     You can set a tag or write down notes.
+
+3) Edit elements by clicking them.
+     You can change everything."
+label_settings = SubResource("LabelSettings_30tb4")
+
+[node name="credits" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = 62.5
+offset_right = 85.0
+offset_bottom = 202.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits:
+Code: Qwatrum
+Art: Qwatrum
+Uicons by Flaticon
+
+2024"
+label_settings = SubResource("LabelSettings_30tb4")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

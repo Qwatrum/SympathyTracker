@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dlcbf8hmra1wt"]
+[gd_scene load_steps=22 format=3 uid="uid://dlcbf8hmra1wt"]
 
 [ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_hmr2l"]
 [ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_eepy6"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="4_spjc3"]
 [ext_resource type="Texture2D" uid="uid://bij3urd6lt7l7" path="res://assets/cross.png" id="5_0qm1c"]
 [ext_resource type="Script" path="res://scenes/view_screen.gd" id="5_fn4yp"]
+[ext_resource type="Texture2D" uid="uid://6h1ynxm45dl1" path="res://assets/up.png" id="7_d22kr"]
+[ext_resource type="Texture2D" uid="uid://bpiei7s2lppsb" path="res://assets/down.png" id="8_ss0pa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkexl"]
 bg_color = Color(0.388235, 0.180392, 0.333333, 1)
@@ -257,5 +259,34 @@ grow_horizontal = 0
 scale = Vector2(0.035, 0.035)
 texture_normal = ExtResource("5_0qm1c")
 
+[node name="Up" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 396.0
+offset_right = 682.0
+offset_bottom = 908.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_d22kr")
+
+[node name="Down" type="TextureButton" parent="."]
+offset_left = 241.0
+offset_top = 399.0
+offset_right = 753.0
+offset_bottom = 911.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("8_ss0pa")
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 386.0
+offset_right = 130.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("3_00ifp")
+theme_override_font_sizes/font_size = 56
+text = "100"
+
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Up" to="." method="_on_up_pressed"]
+[connection signal="pressed" from="Down" to="." method="_on_down_pressed"]

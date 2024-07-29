@@ -4,7 +4,11 @@ extends Panel
 var new_list
 var id
 
+var old_values = []
+
 func create(list, i):
+	for e in list[1]:
+		old_values.append(e)
 	id = i
 	$"Name".text = list[0]
 	$"Type".text = list[2]
@@ -21,6 +25,8 @@ func create(list, i):
 	
 	$"Tag".text = list[3]
 	$"Notes".text = list[4]
+	$"Value".text = str(list[1][-1])
+	adjust_color(int($"Value".text))
 
 
 func _on_cancel_pressed():
@@ -30,9 +36,49 @@ func _on_cancel_pressed():
 
 func save_changes():
 	main.apply_changes(id, new_list)
+	
 
 
 func _on_save_pressed():
-	new_list = [$"Name".text, 0, $"Type".text, $"Tag".text, $"Notes".text] # zero is temp
+	old_values.append(int($"Value".text))
+	new_list = [$"Name".text, old_values, $"Type".text, $"Tag".text, $"Notes".text]
 	save_changes()
 	queue_free()
+
+
+func _on_up_pressed():
+	var v = int($"Value".text)
+	v+=1
+	$"Value".text = str(v)
+	adjust_color(v)
+
+
+func _on_down_pressed():
+	var v = int($"Value".text)
+	v-=1
+	$"Value".text = str(v)
+	adjust_color(v)
+	
+	
+func adjust_color(val):
+	if val < -20:
+		$"Value".add_theme_color_override("font_color", Color(0.5, 0, 0))
+	elif val < 0:
+		$"Value".add_theme_color_override("font_color", Color(1, 0, 0))
+	elif val < 15:
+		$"Value".add_theme_color_override("font_color", Color(1, 0.3, 0))
+	elif val < 25:
+		$"Value".add_theme_color_override("font_color", Color(1, 0.5, 0))
+	elif val < 50:
+		$"Value".add_theme_color_override("font_color", Color(1, 0.7, 0))
+	elif val < 75:
+		$"Value".add_theme_color_override("font_color", Color(1, 1, 0))
+	elif val < 100:
+		$"Value".add_theme_color_override("font_color", Color(0.5, 1, 0))
+	elif val < 125:
+		$"Value".add_theme_color_override("font_color", Color(0.3, 1, 0))
+	elif val < 150:
+		$"Value".add_theme_color_override("font_color", Color(0, 1, 0))
+	else:
+		$"Value".add_theme_color_override("font_color", Color(0, 0.7, 0))
+

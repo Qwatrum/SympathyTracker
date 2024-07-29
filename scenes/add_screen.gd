@@ -13,6 +13,6 @@ func _on_cancel_pressed():
 
 func _on_add_pressed():
 	if $"Name".text != "" and $"Type".text != "Select Type":
-		var new_element = [$"Name".text, $"Value".value, $"Type".text, $"Tag".text, $"Notes".text]
+		var new_element = [$"Name".text, [$"Value".value], $"Type".text, $"Tag".text, $"Notes".text]
 		main.add_element(new_element, true)
 		queue_free()

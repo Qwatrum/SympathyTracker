@@ -4,6 +4,7 @@ var pallete = "https://coolors.co/f4f4f4-7a3b69-eb5e28-124e78-f2bb05"
 var add_screen = preload("res://scenes/add_screen.tscn")
 var new_element = preload("res://scenes/element.tscn")
 var view_screen = preload("res://scenes/view_screen.tscn")
+var info_screen = preload("res://scenes/info_screen.tscn")
 
 var last_id = 0
 var elements = []
@@ -65,6 +66,7 @@ func view(id):
 	viewer = inste
 
 func apply_changes(id, list):
+	viewer = false
 	elements[id-1] = list
 	for f in $"ScrollContainer/Elements".get_children():
 		f.queue_free()
@@ -75,5 +77,16 @@ func apply_changes(id, list):
 		
 func show_add():
 	$"Add".show()
+	$"Info".show()
 func reset_viewer():
 	viewer = false
+
+
+
+func _on_info_pressed():
+	$"Info".hide()
+	$"Add".show()
+	
+	var inste = info_screen.instantiate()
+	add_child(inste)
+	inste.position = Vector2(259,61)
