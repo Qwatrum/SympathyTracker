@@ -1,6 +1,10 @@
 extends Control
 
-func setup(list):
+@onready var main := get_node("/root/MainMenu")
+var id
+
+func setup(list, i):
+	id = i
 	if list[0] == "ghost":
 		$"Icon".hide()
 		$"Circle".hide()
@@ -30,3 +34,8 @@ func adjust_color(val):
 		$"Value".add_theme_color_override("font_color", Color(1, 0.7, 0))
 	elif val >= 100:
 		$"Value".add_theme_color_override("font_color", Color(0, 0.30, 0))
+
+
+
+func _on_background_pressed():
+	main.view(id)
