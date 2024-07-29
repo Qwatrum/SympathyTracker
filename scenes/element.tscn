@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bfkihf1mw6yyn"]
+[gd_scene load_steps=24 format=3 uid="uid://bfkihf1mw6yyn"]
 
 [ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_t2du5"]
 [ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_3xque"]
@@ -166,16 +166,14 @@ font = ExtResource("3_4ivoa")
 font_size = 25
 font_color = Color(0.478431, 0.231373, 0.411765, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_f230e"]
-font_size = 32
-font_color = Color(0.376471, 0.8, 0.235294, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_wr8wt"]
 font = ExtResource("3_4ivoa")
 font_size = 22
 font_color = Color(0.0705882, 0.305882, 0.470588, 1)
 
-[node name="Element" type="Panel"]
+[node name="Element" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 307.0
 offset_bottom = 84.0
 theme = SubResource("Theme_wvniu")
@@ -214,8 +212,9 @@ offset_left = 230.0
 offset_top = 4.0
 offset_right = 287.0
 offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("3_4ivoa")
+theme_override_font_sizes/font_size = 32
 text = "100"
-label_settings = SubResource("LabelSettings_f230e")
 horizontal_alignment = 2
 vertical_alignment = 1
 

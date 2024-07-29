@@ -19,4 +19,18 @@ func _on_add_button_down():
 func add_element(new_e):
 	$"Add".show()
 	var inste = new_element.instantiate()
-	$"ScrollContainer/Elements".add_child(inste)
+	
+	
+	if $"ScrollContainer/Elements".get_child_count() >= 8:
+		if $"ScrollContainer/Elements".get_child_count() != 8:
+			$"ScrollContainer/Elements".get_children()[-1].queue_free()
+		$"ScrollContainer/Elements".add_child(inste)
+		inste.setup(new_e)
+		
+		var ghost = new_element.instantiate()
+		$"ScrollContainer/Elements".add_child(ghost)
+		ghost.setup(["ghost"])
+	
+	else:
+		$"ScrollContainer/Elements".add_child(inste)
+		inste.setup(new_e)

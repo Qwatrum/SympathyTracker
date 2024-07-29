@@ -94,9 +94,10 @@ vertical_alignment = 1
 layout_mode = 1
 offset_left = 6.0
 offset_top = 61.0
-offset_right = 315.0
-offset_bottom = 647.0
+offset_right = 337.0
+offset_bottom = 885.0
 scale = Vector2(0.7, 0.7)
+horizontal_scroll_mode = 0
 
 [node name="Elements" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -106,6 +107,21 @@ theme_override_constants/separation = 96
 layout_mode = 2
 
 [node name="Element2" parent="ScrollContainer/Elements" instance=ExtResource("4_o4b3f")]
+layout_mode = 2
+
+[node name="Element3" parent="ScrollContainer/Elements" instance=ExtResource("4_o4b3f")]
+layout_mode = 2
+
+[node name="Element4" parent="ScrollContainer/Elements" instance=ExtResource("4_o4b3f")]
+layout_mode = 2
+
+[node name="Element5" parent="ScrollContainer/Elements" instance=ExtResource("4_o4b3f")]
+layout_mode = 2
+
+[node name="Element6" parent="ScrollContainer/Elements" instance=ExtResource("4_o4b3f")]
+layout_mode = 2
+
+[node name="Element7" parent="ScrollContainer/Elements" instance=ExtResource("4_o4b3f")]
 layout_mode = 2
 
 [node name="Add" type="Button" parent="."]

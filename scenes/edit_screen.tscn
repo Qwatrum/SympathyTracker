@@ -1,0 +1,271 @@
+[gd_scene load_steps=20 format=3 uid="uid://dlcbf8hmra1wt"]
+
+[ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_48gog"]
+[ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_rk6qm"]
+[ext_resource type="FontFile" uid="uid://c3nwxtsii28u3" path="res://fonts/Quicksand-SemiBold.ttf" id="3_ip5t2"]
+[ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="4_xunll"]
+[ext_resource type="Texture2D" uid="uid://bij3urd6lt7l7" path="res://assets/cross.png" id="6_dw06m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkexl"]
+bg_color = Color(0.388235, 0.180392, 0.333333, 1)
+corner_radius_top_left = 99
+corner_radius_top_right = 99
+corner_radius_bottom_right = 99
+corner_radius_bottom_left = 99
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bg52"]
+bg_color = Color(0.552941, 0.278431, 0.47451, 1)
+corner_radius_top_left = 99
+corner_radius_top_right = 99
+corner_radius_bottom_right = 99
+corner_radius_bottom_left = 99
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4sbw"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnaoi"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ide1i"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j061l"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5k8g"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsysi"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_snosb"]
+HSlider/icons/grabber = ExtResource("1_48gog")
+HSlider/icons/grabber_highlight = ExtResource("2_rk6qm")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vkexl")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2bg52")
+LineEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
+LineEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
+LineEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
+LineEdit/fonts/font = ExtResource("3_ip5t2")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_h4sbw")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_hnaoi")
+OptionButton/colors/font_color = Color(0.478431, 0.231373, 0.411765, 1)
+OptionButton/colors/font_focus_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_hover_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_pressed_color = Color(0.478431, 0.231373, 0.411765, 1)
+OptionButton/font_sizes/font_size = 20
+OptionButton/fonts/font = ExtResource("4_xunll")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_ide1i")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_j061l")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_ide1i")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_ide1i")
+Panel/styles/panel = SubResource("StyleBoxFlat_r5k8g")
+TextEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
+TextEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
+TextEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
+TextEdit/fonts/font = ExtResource("3_ip5t2")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_hsysi")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1syra"]
+font = ExtResource("4_xunll")
+font_size = 32
+font_color = Color(0.478431, 0.231373, 0.411765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t484d"]
+font = ExtResource("4_xunll")
+font_size = 24
+font_color = Color(0.478431, 0.231373, 0.411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t83qv"]
+bg_color = Color(0.671434, 0.360138, 0.585114, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.478431, 0.231373, 0.411765, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da7ds"]
+bg_color = Color(0.478431, 0.231373, 0.411765, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.671434, 0.360138, 0.585114, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_28avr"]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("3_ip5t2")
+Button/styles/focus = SubResource("StyleBoxFlat_t83qv")
+Button/styles/hover = SubResource("StyleBoxFlat_t83qv")
+Button/styles/normal = SubResource("StyleBoxFlat_da7ds")
+Button/styles/pressed = SubResource("StyleBoxFlat_t83qv")
+
+[node name="Edit_Screen" type="Panel"]
+offset_left = -226.0
+offset_top = -147.0
+offset_right = 228.0
+offset_bottom = 209.0
+theme = SubResource("Theme_snosb")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 276.0
+offset_bottom = 46.0
+text = "Edit element:"
+label_settings = SubResource("LabelSettings_1syra")
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 68.0
+offset_right = 161.0
+offset_bottom = 104.0
+placeholder_text = "Name"
+max_length = 14
+caret_blink = true
+
+[node name="Value" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 148.0
+offset_right = 127.0
+offset_bottom = 164.0
+min_value = -50.0
+max_value = 150.0
+
+[node name="TextSlider" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 116.0
+offset_right = 254.0
+offset_bottom = 146.0
+text = "Start value: 0"
+label_settings = SubResource("LabelSettings_t484d")
+
+[node name="Type" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 182.0
+offset_right = 174.0
+offset_bottom = 217.0
+item_count = 4
+selected = 0
+popup/item_0/text = "Select Type"
+popup/item_0/id = 3
+popup/item_0/disabled = true
+popup/item_0/separator = true
+popup/item_1/text = "Person"
+popup/item_1/id = 0
+popup/item_2/text = "Company"
+popup/item_2/id = 1
+popup/item_3/text = "Something else"
+popup/item_3/id = 2
+
+[node name="Notes" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 64.0
+offset_right = 424.0
+offset_bottom = 267.0
+placeholder_text = "Notes ..."
+caret_blink = true
+
+[node name="Add" type="Button" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 295.0
+offset_right = 273.0
+offset_bottom = 338.0
+theme = SubResource("Theme_28avr")
+text = "Add"
+
+[node name="Tag" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 235.0
+offset_right = 173.0
+offset_bottom = 267.0
+placeholder_text = "Tag"
+max_length = 12
+
+[node name="Cancel" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 16.0
+offset_right = 932.0
+offset_bottom = 528.0
+scale = Vector2(0.035, 0.035)
+texture_normal = ExtResource("6_dw06m")
+
+[connection signal="value_changed" from="Value" to="." method="_on_value_value_changed"]
+[connection signal="pressed" from="Add" to="." method="_on_add_pressed"]
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
