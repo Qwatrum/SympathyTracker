@@ -13,6 +13,7 @@ var y_begin = 300
 var y_end = 0
 
 func create(list, i):
+	
 	for e in list[1]:
 		old_values.append(e)
 	id = i
@@ -49,7 +50,7 @@ func save_changes():
 
 func _on_save_pressed():
 	old_values.append(int($"Value".text))
-	new_list = [$"Name".text, old_values, $"Type".text, $"Tag".text, $"Notes".text]
+	new_list = [$"Name".text, old_values, $"Type".text, $"Tag".text, $"Notes".text, id]
 	save_changes()
 	queue_free()
 
@@ -110,3 +111,4 @@ func show_graph(values):
 		var y = y_begin - values[i] - 140
 		p.append(Vector2(x, y))
 	$"Line".points = p
+

@@ -158,7 +158,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="Theme" id="Theme_28avr"]
+[sub_resource type="Theme" id="Theme_rrfr5"]
 Button/font_sizes/font_size = 24
 Button/fonts/font = ExtResource("3_00ifp")
 Button/styles/focus = SubResource("StyleBoxFlat_t83qv")
@@ -235,7 +235,7 @@ offset_right = 47.0
 offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_28avr")
+theme = SubResource("Theme_rrfr5")
 text = "Save"
 
 [node name="Tag" type="LineEdit" parent="."]

@@ -13,6 +13,8 @@ var elements_copy = []
 var searching = false
 var viewer
 
+var last_id_save
+
 func _ready():
 	# TODO: loading data
 	pass
@@ -25,35 +27,43 @@ func _on_add_button_down():
 	inste.position = Vector2(349,146)
 
 
-func add_element(new_e, toList):
+func edit_element(element_list):
+	var id_for_e = element_list[-1]
 	$"Add".show()
 	var inste = new_element.instantiate()
-	if toList:
-		elements.append(new_e)
-	else:
-		last_id = 0
-	
-	
 	if $"ScrollContainer/Elements".get_child_count() >= 8:
 		if $"ScrollContainer/Elements".get_child_count() != 8:
 			$"ScrollContainer/Elements".get_children()[-1].queue_free()
 		$"ScrollContainer/Elements".add_child(inste)
-		if toList:
-			last_id+=1
-		inste.setup(new_e, last_id)
-		
+		inste.setup(element_list , id_for_e)
 		
 		var ghost = new_element.instantiate()
 		$"ScrollContainer/Elements".add_child(ghost)
 		ghost.setup(["ghost"], -2)
-	
 	else:
 		$"ScrollContainer/Elements".add_child(inste)
-		if toList:
-			last_id+=1
-		inste.setup(new_e, last_id)
+		inste.setup(element_list, id_for_e)
+	
+
+func add_new_element(new_e):
+	$"Add".show()
+	var inste = new_element.instantiate()
+	new_e[-1] = last_id+1 # setting the id for the element
+	elements.append(new_e)
+	if $"ScrollContainer/Elements".get_child_count() >= 8:
+		if $"ScrollContainer/Elements".get_child_count() != 8:
+			$"ScrollContainer/Elements".get_children()[-1].queue_free()
+		$"ScrollContainer/Elements".add_child(inste)
+		last_id += 1
+		inste.setup(new_e , last_id)
 		
-	#print(last_id)
+		var ghost = new_element.instantiate()
+		$"ScrollContainer/Elements".add_child(ghost)
+		ghost.setup(["ghost"], -2)
+	else:
+		$"ScrollContainer/Elements".add_child(inste)
+		last_id+=1
+		inste.setup(new_e, last_id)
 
 func view(id):
 	#print(id)
@@ -64,17 +74,19 @@ func view(id):
 	var inste = view_screen.instantiate()
 	add_child(inste)
 	inste.position = Vector2(259,61)
+	#print(id)
 	inste.create(elements[id-1], id)
 	viewer = inste
 
 func apply_changes(id, list):
+
 	viewer = false
 	elements[id-1] = list
 	for f in $"ScrollContainer/Elements".get_children():
 		f.queue_free()
 	#print(last_id)
 	for e in elements:
-		add_element(e, false)
+		edit_element(e)
 	#print(last_id)
 		
 func show_add():
@@ -116,7 +128,7 @@ func _on_search_pressed():
 			c.queue_free()
 		
 		for l in search_elements:
-			add_element(l, false)
+			edit_element(l)
 
 
 func _on_cancel_search_pressed():
@@ -132,5 +144,5 @@ func _on_cancel_search_pressed():
 		elements_copy = []
 		
 		for e in elements:
-			add_element(e, false)
+			edit_element(e)
 		

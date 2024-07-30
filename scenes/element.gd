@@ -51,4 +51,5 @@ func adjust_color(val):
 
 
 func _on_background_pressed():
+	print(id)
 	main.view(id)
