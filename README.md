@@ -11,7 +11,6 @@ With a graph and notes you can add to record your sympathy for people, like your
 - Mady by Qwatrum
 
 ## Features
-###### (planned)
 
 - Add an element (a person or a company/brand or a thing or...)
 - Click buttons to decrease or increase their score
