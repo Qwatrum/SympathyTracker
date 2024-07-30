@@ -15,9 +15,37 @@ var viewer
 
 var last_id_save
 
+var save_file_path = "user://save/"
+var save_file_name = "DataSaver.tres"
+var data = Data.new()
+
+func dir_absolute(path):
+	DirAccess.make_dir_absolute(path)
+
+func load_saved_elements():
+	if FileAccess.file_exists(save_file_path + save_file_name):
+		data = ResourceLoader.load(save_file_path + save_file_name).duplicate(true)
+	else:
+		save_elements()
+		load_saved_elements()
+
+func save_elements():
+	ResourceSaver.save(data, save_file_path + save_file_name)
+
+func delete_all():
+	elements = []
+	for e in $"ScrollContainer/Elements".get_children():
+		e.queue_free()
+	data.delete_all_elements()
+	save_elements()
+
 func _ready():
-	# TODO: loading data
-	pass
+	dir_absolute(save_file_path)
+	load_saved_elements()
+	elements = data.elements_saved
+	
+	for e in elements:
+		edit_element(e)
 
 
 func _on_add_button_down():
@@ -44,6 +72,8 @@ func edit_element(element_list):
 		$"ScrollContainer/Elements".add_child(inste)
 		inste.setup(element_list, id_for_e)
 	
+	data.change_saved_elements(elements)
+	save_elements()
 
 func add_new_element(new_e):
 	$"Add".show()
@@ -64,6 +94,9 @@ func add_new_element(new_e):
 		$"ScrollContainer/Elements".add_child(inste)
 		last_id+=1
 		inste.setup(new_e, last_id)
+	
+	data.change_saved_elements(elements)
+	save_elements()
 
 func view(id):
 	#print(id)
@@ -119,7 +152,7 @@ func _on_search_pressed():
 		for e in elements:
 			var add = false
 			for ee in e:
-				if str(ee).contains(search):
+				if str(ee).to_lower().contains(str(search).to_lower()):
 					add = true
 			if add:
 				search_elements.append(e)

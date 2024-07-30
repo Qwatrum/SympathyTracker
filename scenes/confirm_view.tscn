@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://go2tu0ym8r3c"]
+[gd_scene load_steps=18 format=3 uid="uid://dsqlouo64g6hh"]
 
-[ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_ii8ir"]
-[ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_4g462"]
-[ext_resource type="FontFile" uid="uid://c3nwxtsii28u3" path="res://fonts/Quicksand-SemiBold.ttf" id="3_u020h"]
-[ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="4_fv44s"]
-[ext_resource type="Script" path="res://scenes/info_screen.gd" id="5_7jb8a"]
-[ext_resource type="Texture2D" uid="uid://bij3urd6lt7l7" path="res://assets/cross.png" id="6_tf3mv"]
+[ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_6bldf"]
+[ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_pq1n7"]
+[ext_resource type="FontFile" uid="uid://c3nwxtsii28u3" path="res://fonts/Quicksand-SemiBold.ttf" id="3_5y7ky"]
+[ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="4_mugyy"]
+[ext_resource type="Script" path="res://scenes/confirm_view.gd" id="5_0us14"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkexl"]
 bg_color = Color(0.388235, 0.180392, 0.333333, 1)
@@ -98,14 +97,14 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
 [sub_resource type="Theme" id="Theme_snosb"]
-HSlider/icons/grabber = ExtResource("1_ii8ir")
-HSlider/icons/grabber_highlight = ExtResource("2_4g462")
+HSlider/icons/grabber = ExtResource("1_6bldf")
+HSlider/icons/grabber_highlight = ExtResource("2_pq1n7")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vkexl")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2bg52")
 LineEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
 LineEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
 LineEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
-LineEdit/fonts/font = ExtResource("3_u020h")
+LineEdit/fonts/font = ExtResource("3_5y7ky")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_h4sbw")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_hnaoi")
 OptionButton/colors/font_color = Color(0.478431, 0.231373, 0.411765, 1)
@@ -114,7 +113,7 @@ OptionButton/colors/font_hover_color = Color(0.671434, 0.360138, 0.585114, 1)
 OptionButton/colors/font_hover_pressed_color = Color(0.671434, 0.360138, 0.585114, 1)
 OptionButton/colors/font_pressed_color = Color(0.478431, 0.231373, 0.411765, 1)
 OptionButton/font_sizes/font_size = 20
-OptionButton/fonts/font = ExtResource("4_fv44s")
+OptionButton/fonts/font = ExtResource("4_mugyy")
 OptionButton/styles/focus = SubResource("StyleBoxFlat_ide1i")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_j061l")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_ide1i")
@@ -123,92 +122,84 @@ Panel/styles/panel = SubResource("StyleBoxFlat_r5k8g")
 TextEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
 TextEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
 TextEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
-TextEdit/fonts/font = ExtResource("3_u020h")
+TextEdit/fonts/font = ExtResource("3_5y7ky")
 TextEdit/styles/normal = SubResource("StyleBoxFlat_hsysi")
 
-[sub_resource type="LabelSettings" id="LabelSettings_8h67h"]
-font = ExtResource("4_fv44s")
+[sub_resource type="LabelSettings" id="LabelSettings_1syra"]
+font = ExtResource("4_mugyy")
 font_size = 32
-font_color = Color(0.478431, 0.231373, 0.411765, 1)
+font_color = Color(0.706196, 0.104655, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_30tb4"]
-font = ExtResource("4_fv44s")
-font_size = 20
-font_color = Color(0.478431, 0.231373, 0.411765, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_x6mev"]
+font_color = Color(1, 0.207843, 0.0784314, 1)
 
-[node name="Info_Screen" type="Panel"]
-offset_right = 882.0
-offset_bottom = 567.0
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7pfk6"]
+color = Color(0.706196, 0.104655, 0, 1)
+thickness = 3
+
+[node name="Confirm_Screen" type="Panel"]
+offset_left = 169.0
+offset_top = 114.0
+offset_right = 710.0
+offset_bottom = 429.0
 theme = SubResource("Theme_snosb")
-script = ExtResource("5_7jb8a")
-
-[node name="Cancel" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -34.0
-offset_top = 16.0
-offset_right = 478.0
-offset_bottom = 528.0
-grow_horizontal = 0
-scale = Vector2(0.035, 0.035)
-texture_normal = ExtResource("6_tf3mv")
+script = ExtResource("5_0us14")
 
 [node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 6.0
-offset_right = 276.0
-offset_bottom = 46.0
-text = "Information about Sympathy Tracker:"
-label_settings = SubResource("LabelSettings_8h67h")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 5.0
+offset_right = 154.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "CONFIRM DELETION:"
+label_settings = SubResource("LabelSettings_1syra")
 
-[node name="use" type="Label" parent="."]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 54.0
-offset_right = 119.0
-offset_bottom = 79.0
-text = "How to use:
-1) Create a new element with the + button
-
-2) Give it a name and set the type and value.
-     You can set a tag or write down notes.
-
-3) Edit elements by clicking them.
-     You can change everything."
-label_settings = SubResource("LabelSettings_30tb4")
-
-[node name="credits" type="Label" parent="."]
+[node name="Text" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = 62.5
-offset_right = 85.0
-offset_bottom = 202.5
+offset_left = -148.0
+offset_top = -76.5
+offset_right = 148.0
+offset_bottom = 76.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Credits:
-Code: Qwatrum
-Art: Qwatrum
-Uicons by Flaticon
-
-2024"
-label_settings = SubResource("LabelSettings_30tb4")
+text = "Every element wil be deleted and this CANNOT be undone!
+By clicking DELETE you delete all the elements with their data including names, tags, notes, types, and their values!"
+label_settings = SubResource("LabelSettings_x6mev")
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Delete" type="Button" parent="."]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 524.0
-offset_right = 156.0
-offset_bottom = 555.0
-text = "Delete Data"
+offset_left = 46.0
+offset_top = 259.0
+offset_right = 157.0
+offset_bottom = 298.0
+text = "DELETE"
 
-[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
+[node name="Cancel" type="Button" parent="."]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 257.0
+offset_right = 484.0
+offset_bottom = 300.0
+text = "Cancel"
+
+[node name="Line" type="HSeparator" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 43.0
+offset_right = 423.0
+offset_bottom = 47.0
+theme_override_styles/separator = SubResource("StyleBoxLine_7pfk6")
+
 [connection signal="pressed" from="Delete" to="." method="_on_delete_pressed"]
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

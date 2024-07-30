@@ -2,6 +2,7 @@ extends Panel
 
 @onready var main := get_parent()
 
+
 func _on_value_value_changed(value):
 	$"TextSlider".text = "Start value: "+str(round(value))
 

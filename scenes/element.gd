@@ -11,6 +11,7 @@ func setup(list, i):
 		$"Name".hide()
 		$"Value".hide()
 		$"Tag".hide()
+		$"Background".disabled = true
 		
 	else:
 		$"Name".text = list[0]
@@ -51,5 +52,4 @@ func adjust_color(val):
 
 
 func _on_background_pressed():
-	print(id)
 	main.view(id)
