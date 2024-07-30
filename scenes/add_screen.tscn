@@ -202,7 +202,6 @@ offset_top = 148.0
 offset_right = 133.0
 offset_bottom = 164.0
 min_value = -50.0
-max_value = 150.0
 
 [node name="TextSlider" type="Label" parent="."]
 layout_mode = 0

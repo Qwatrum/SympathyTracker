@@ -5,6 +5,12 @@ var new_list
 var id
 
 var old_values = []
+var v_save = []
+var last_x = 145
+var x_begin = 145
+var x_end = 755
+var y_begin = 300
+var y_end = 0
 
 func create(list, i):
 	for e in list[1]:
@@ -27,6 +33,8 @@ func create(list, i):
 	$"Notes".text = list[4]
 	$"Value".text = str(list[1][-1])
 	adjust_color(int($"Value".text))
+	show_graph(list[1])
+	v_save = list[1]
 
 
 func _on_cancel_pressed():
@@ -48,16 +56,22 @@ func _on_save_pressed():
 
 func _on_up_pressed():
 	var v = int($"Value".text)
-	v+=1
-	$"Value".text = str(v)
-	adjust_color(v)
+	
+	if v != 150:
+		v+=1
+		$"Value".text = str(v)
+		adjust_color(v)
+		show_graph(old_values+[v])
 
 
 func _on_down_pressed():
 	var v = int($"Value".text)
-	v-=1
-	$"Value".text = str(v)
-	adjust_color(v)
+	
+	if v != -150:
+		v-=1
+		$"Value".text = str(v)
+		adjust_color(v)
+		show_graph(old_values+[v])
 	
 	
 func adjust_color(val):
@@ -82,3 +96,17 @@ func adjust_color(val):
 	else:
 		$"Value".add_theme_color_override("font_color", Color(0, 0.7, 0))
 
+func show_graph(values):
+	if len(values) == 1:
+		values.append(values[0])
+
+	var amount = len(values)
+
+	var p = []
+	var step_x = (x_end - x_begin) / (amount - 1)
+	
+	for i in range(amount):
+		var x = last_x + i * step_x
+		var y = y_begin - values[i] - 140
+		p.append(Vector2(x, y))
+	$"Line".points = p

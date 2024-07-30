@@ -19,6 +19,7 @@ func setup(list, i):
 		
 		if list[2] == "Company":
 			$"Icon".frame = 1
+			
 		elif list[2] == "Something else":
 			$"Icon".frame = 2
 			

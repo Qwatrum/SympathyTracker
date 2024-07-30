@@ -8,7 +8,9 @@ var info_screen = preload("res://scenes/info_screen.tscn")
 
 var last_id = 0
 var elements = []
+var elements_copy = []
 
+var searching = false
 var viewer
 
 func _ready():
@@ -90,3 +92,45 @@ func _on_info_pressed():
 	var inste = info_screen.instantiate()
 	add_child(inste)
 	inste.position = Vector2(259,61)
+
+
+
+
+func _on_search_pressed():
+	var search = $"SearchText".text
+	if search != "":
+		$"Search".hide()
+		$"CancelSearch".show()
+		elements_copy = elements.duplicate()
+		
+		var search_elements = []
+		for e in elements:
+			var add = false
+			for ee in e:
+				if str(ee).contains(search):
+					add = true
+			if add:
+				search_elements.append(e)
+		
+		for c in $"ScrollContainer/Elements".get_children():
+			c.queue_free()
+		
+		for l in search_elements:
+			add_element(l, false)
+
+
+func _on_cancel_search_pressed():
+	for c in $"ScrollContainer/Elements".get_children():
+		c.queue_free()
+		
+	$"SearchText".text = ""
+	$"CancelSearch".hide()
+	$"Search".show()
+	
+	if len(elements_copy) != 0:
+		elements = elements_copy.duplicate()
+		elements_copy = []
+		
+		for e in elements:
+			add_element(e, false)
+		

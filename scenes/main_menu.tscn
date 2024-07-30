@@ -1,9 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://2e5y80wxm50f"]
+[gd_scene load_steps=25 format=3 uid="uid://2e5y80wxm50f"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_x80ef"]
 [ext_resource type="FontFile" uid="uid://c3nwxtsii28u3" path="res://fonts/Quicksand-SemiBold.ttf" id="2_8d1ce"]
 [ext_resource type="FontFile" uid="uid://2n4vsmb07in6" path="res://fonts/Quicksand-Regular.ttf" id="3_tb16o"]
 [ext_resource type="Texture2D" uid="uid://d0s7r22nlhoa4" path="res://assets/info.png" id="4_80x43"]
+[ext_resource type="Texture2D" uid="uid://v453ikgp4l8p" path="res://assets/search.png" id="5_5j0xl"]
+[ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="6_ts7w7"]
+[ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="7_4oxam"]
+[ext_resource type="Texture2D" uid="uid://bic1aarti8chn" path="res://assets/cross2.png" id="8_0w822"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lup60"]
 bg_color = Color(0.478431, 0.231373, 0.411765, 1)
@@ -53,6 +57,125 @@ Button/styles/normal = SubResource("StyleBoxFlat_da7ds")
 font = ExtResource("3_tb16o")
 font_size = 11
 font_color = Color(0.498039, 0.498039, 0.498039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkexl"]
+bg_color = Color(0.388235, 0.180392, 0.333333, 1)
+corner_radius_top_left = 99
+corner_radius_top_right = 99
+corner_radius_bottom_right = 99
+corner_radius_bottom_left = 99
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bg52"]
+bg_color = Color(0.552941, 0.278431, 0.47451, 1)
+corner_radius_top_left = 99
+corner_radius_top_right = 99
+corner_radius_bottom_right = 99
+corner_radius_bottom_left = 99
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4sbw"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hnaoi"]
+bg_color = Color(0.878431, 0.878431, 0.878431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ide1i"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j061l"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5k8g"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hsysi"]
+bg_color = Color(0.917647, 0.917647, 0.917647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.498039, 0.498039, 0.498039, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_qmnyd"]
+HSlider/icons/grabber = ExtResource("6_ts7w7")
+HSlider/icons/grabber_highlight = ExtResource("7_4oxam")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_vkexl")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_2bg52")
+LineEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
+LineEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
+LineEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
+LineEdit/fonts/font = ExtResource("2_8d1ce")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_h4sbw")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_hnaoi")
+OptionButton/colors/font_color = Color(0.478431, 0.231373, 0.411765, 1)
+OptionButton/colors/font_focus_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_hover_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.671434, 0.360138, 0.585114, 1)
+OptionButton/colors/font_pressed_color = Color(0.478431, 0.231373, 0.411765, 1)
+OptionButton/font_sizes/font_size = 20
+OptionButton/fonts/font = ExtResource("3_tb16o")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_ide1i")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_j061l")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_ide1i")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_ide1i")
+Panel/styles/panel = SubResource("StyleBoxFlat_r5k8g")
+TextEdit/colors/caret_color = Color(0.478431, 0.231373, 0.411765, 1)
+TextEdit/colors/font_color = Color(0.671434, 0.360138, 0.585114, 1)
+TextEdit/colors/font_placeholder_color = Color(0.478431, 0.231373, 0.411765, 1)
+TextEdit/fonts/font = ExtResource("2_8d1ce")
+TextEdit/styles/normal = SubResource("StyleBoxFlat_hsysi")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -144,5 +267,38 @@ offset_bottom = 523.0
 scale = Vector2(0.05, 0.05)
 texture_normal = ExtResource("4_80x43")
 
+[node name="Search" type="TextureButton" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 533.0
+offset_top = 11.0
+offset_right = 1045.0
+offset_bottom = 523.0
+scale = Vector2(0.05, 0.05)
+texture_normal = ExtResource("5_5j0xl")
+
+[node name="SearchText" type="LineEdit" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = 366.0
+offset_top = 6.0
+offset_right = 529.0
+offset_bottom = 39.0
+theme = SubResource("Theme_qmnyd")
+placeholder_text = "Search..."
+
+[node name="CancelSearch" type="TextureButton" parent="."]
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 533.0
+offset_top = 11.0
+offset_right = 1045.0
+offset_bottom = 523.0
+scale = Vector2(0.045, 0.045)
+texture_normal = ExtResource("8_0w822")
+
 [connection signal="button_down" from="Add" to="." method="_on_add_button_down"]
 [connection signal="pressed" from="Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="Search" to="." method="_on_search_pressed"]
+[connection signal="pressed" from="CancelSearch" to="." method="_on_cancel_search_pressed"]

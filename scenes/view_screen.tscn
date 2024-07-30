@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlcbf8hmra1wt"]
+[gd_scene load_steps=23 format=3 uid="uid://dlcbf8hmra1wt"]
 
 [ext_resource type="Texture2D" uid="uid://b67rp1ec3v1j6" path="res://assets/circle.png" id="1_hmr2l"]
 [ext_resource type="Texture2D" uid="uid://bjve1ilfmys4q" path="res://assets/circle_highlight.png" id="2_eepy6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scenes/view_screen.gd" id="5_fn4yp"]
 [ext_resource type="Texture2D" uid="uid://6h1ynxm45dl1" path="res://assets/up.png" id="7_d22kr"]
 [ext_resource type="Texture2D" uid="uid://bpiei7s2lppsb" path="res://assets/down.png" id="8_ss0pa"]
+[ext_resource type="PackedScene" uid="uid://cop3rw8i77bqa" path="res://scenes/line.tscn" id="9_pal5r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkexl"]
 bg_color = Color(0.388235, 0.180392, 0.333333, 1)
@@ -269,6 +270,7 @@ scale = Vector2(0.1, 0.1)
 texture_normal = ExtResource("7_d22kr")
 
 [node name="Down" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 241.0
 offset_top = 399.0
 offset_right = 753.0
@@ -285,6 +287,16 @@ offset_bottom = 456.0
 theme_override_fonts/font = ExtResource("3_00ifp")
 theme_override_font_sizes/font_size = 56
 text = "100"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 70.0
+offset_right = 632.0
+offset_bottom = 384.0
+
+[node name="Line" parent="." instance=ExtResource("9_pal5r")]
+position = Vector2(-128, 71)
 
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
