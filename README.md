@@ -1,7 +1,7 @@
 # SympathyTracker
 ## _A diary tool like to track your sympathy for things or people_
 
-
+### [View on Itch.io](https://qwatrum.itch.io/sympathy-tracker "View on Itch.io")
 
 Sympathy Tracker is your tool to track your sympathy. Whether it increases or decreases you can track it with just a few clicks. 
 With a graph and notes you can add to record your sympathy for people, like your neighbour or big companies!
